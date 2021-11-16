@@ -1,20 +1,24 @@
-export default function Home() {
-  return (
-    <div className="hello">
-      <p>Hello World</p>
+import { useThemeContext } from '../context/ThemeContext';
 
+export default function Home() {
+  const { theme, setTheme } = useThemeContext();
+  return (
+    <div>
+      <h1>Hello World</h1>
+      <button
+        onClick={() => {
+          setTheme({
+            type: 'TOGGLE_MODE',
+          });
+        }}
+      >
+        Toggle Theme
+      </button>
       <style jsx>{`
-        .hello {
-          font: 15px Helvetica, Arial, sans-serif;
-          background: #eee;
-          padding: 100px;
-          text-align: center;
-          transition: 100ms ease-in background;
-        }
-        .hello:hover {
-          background: #ccc;
+        h1 {
+          color: ${theme.color[10]};
         }
       `}</style>
     </div>
-  )
+  );
 }
