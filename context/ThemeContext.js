@@ -5,17 +5,17 @@ import useLocalStorage from '../hooks/useLocalStorage';
 
 const ThemeContext = createContext();
 
-// intial theme
-const intialColor = 'mint';
-const intialDarkMode = false;
+// initial theme
+const initialColor = 'mint';
+const initialDarkMode = false;
 const initialTheme = {
-  colorName: intialColor,
-  grayName: determineGrayScale(intialColor),
-  darkMode: intialDarkMode,
-  gray: colors[determineGrayScale(intialColor)][
-    intialDarkMode ? 'dark' : 'light'
+  colorName: initialColor,
+  grayName: determineGrayScale(initialColor),
+  darkMode: initialDarkMode,
+  gray: colors[determineGrayScale(initialColor)][
+    initialDarkMode ? 'dark' : 'light'
   ],
-  color: colors[intialColor][intialDarkMode ? 'dark' : 'light'],
+  color: colors[initialColor][initialDarkMode ? 'dark' : 'light'],
 };
 
 // state is previous state, action is object passed to dispatch
@@ -37,7 +37,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         darkMode: !state.darkMode,
-        gray: colors[state.colorName][!state.darkMode ? 'dark' : 'light'],
+        gray: colors[state.grayName][!state.darkMode ? 'dark' : 'light'],
         color: colors[state.colorName][!state.darkMode ? 'dark' : 'light'],
       };
   }
