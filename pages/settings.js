@@ -65,7 +65,6 @@ export default function Settings() {
             font-family: 'Inter', sans-serif;
             font-size: 1.2rem;
             font-weight: 600;
-            color: ${theme.color[10]};
           }
 
           section {
@@ -82,6 +81,11 @@ export default function Settings() {
             display: flex;
             align-items: center;
             justify-content: space-between;
+          }
+        `}</style>
+        <style jsx>{`
+          label {
+            color: ${theme.color[10]};
           }
         `}</style>
       </main>

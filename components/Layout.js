@@ -4,18 +4,23 @@ import { useThemeContext } from '../context/ThemeContext';
 
 export default function Layout({ children }) {
   const { theme } = useThemeContext();
+
   return (
     <>
       <div>{children}</div>
       <style jsx>{`
         div {
-          margin: 2.8rem 0.75rem 1rem 0.75rem;
+          /* using 5rem because min-height 100vh 
+             not working on body
+          */
+          margin: 2.8rem 0.75rem 5rem 0.75rem;
         }
 
         // on bigger screen
         @media (min-width: 640px) {
           div {
-            margin: 2.8rem auto 1rem;
+            margin-right: auto;
+            margin-left: auto;
             width: 80vw;
           }
         }

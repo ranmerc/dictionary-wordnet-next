@@ -42,11 +42,11 @@ export default function SwitchToggle({ id, checked, onCheckedChange }) {
 
         // data-state change to checked when switch is turned on
         .switch_thumb[data-state='checked'] {
-          // values imperical
+          // values empirical
           transform: translateX(1.9rem);
         }
       `}</style>
-      {/* styled jsx recommends seperation of dynamic and static styles */}
+      {/* styled jsx recommends separation of dynamic and static styles */}
       <style jsx global>{`
         .switch_root {
           background-color: ${theme.gray[2]};

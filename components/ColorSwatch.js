@@ -75,7 +75,7 @@ export default function ColorSwatch() {
       <style jsx global>{`
         .radio_group {
           display: grid;
-          /* values are imperical, this looked best on iphone x */
+          /* values are empirical, this looked best on iphone x */
           grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
           column-gap: 3rem;
           row-gap: 0.625rem;
