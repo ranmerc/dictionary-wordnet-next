@@ -1,7 +1,7 @@
-import ListHeader from '../components/ListHeader';
-import SearchListItem from '../components/SearchListItem';
 import Head from 'next/head';
 import SearchList from '../components/SearchList';
+import ListHeader from '../components/ListHeader';
+import SearchListItem from '../components/SearchListItem';
 
 export default function Bookmarks() {
   return (
@@ -31,7 +31,7 @@ export default function Bookmarks() {
       <style jsx>{`
         main {
           display: grid;
-          row-gap: 1.56rem;
+          row-gap: 2.2rem;
         }
       `}</style>
     </>

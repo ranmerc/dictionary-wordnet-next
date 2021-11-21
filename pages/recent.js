@@ -26,7 +26,7 @@ export default function Recent() {
       <style jsx>{`
         main {
           display: grid;
-          row-gap: 1.56rem;
+          row-gap: 2.2rem;
         }
       `}</style>
     </>
