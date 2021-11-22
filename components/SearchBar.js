@@ -66,6 +66,7 @@ export default function SearchBar({ query, setQuery }) {
           }
           button,
           label {
+            display: grid;
             border: none;
             background-color: transparent;
             width: fit-content;
