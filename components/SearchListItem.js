@@ -1,21 +1,35 @@
 import Link from 'next/link';
 import { useThemeContext } from '../context/ThemeContext';
 
-export default function SearchListItem() {
+export default function SearchListItem({ lemma, pos, def, sense }) {
   const { theme } = useThemeContext();
-
   return (
     <>
-      <Link href="#">
+      <Link href={`/define/${sense}`}>
         <a>
           <div>
-            <h3>submit</h3>
-            <span>(verb)</span>
+            <h3>{lemma.replace(/\_/g, ' ')}</h3>
+            <span>
+              {`(${pos.replace(/./, (match) => {
+                switch (match) {
+                  case 'n':
+                    return 'noun';
+                  case 'a':
+                    return 'adjective';
+                  case 'v':
+                    return 'verb';
+                  case 'r':
+                    return 'adverb';
+                  case 's':
+                    return 'sat adj';
+                  default:
+                    console.log(match);
+                    return 'unknown';
+                }
+              })})`}
+            </span>
           </div>
-          <p>
-            an appearance by actors or performers at the end of the concert or
-            play in order to acknowledge the applause of the audience
-          </p>
+          <p>{def}</p>
         </a>
       </Link>
       <style jsx>{`

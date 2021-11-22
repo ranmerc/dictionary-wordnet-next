@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import ListHeader from '../components/ListHeader';
 import SearchList from '../components/SearchList';
+import ListMessage from '../components/ListMessage';
 import SearchListItem from '../components/SearchListItem';
 
 export default function Recent() {
@@ -12,16 +13,7 @@ export default function Recent() {
       </Head>
       <main>
         <ListHeader enable={false}>Recent</ListHeader>
-        <SearchList>
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-        </SearchList>
-        {/* <ListMessage>List empty. Recent words will show up here.</ListMessage> */}
+        <ListMessage>List empty. Recent words will show up here.</ListMessage>
       </main>
       <style jsx>{`
         main {

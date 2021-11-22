@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import SearchList from '../components/SearchList';
 import ListHeader from '../components/ListHeader';
+import ListMessage from '../components/ListMessage';
 import SearchListItem from '../components/SearchListItem';
 
 export default function Bookmarks() {
@@ -15,18 +16,9 @@ export default function Bookmarks() {
       </Head>
       <main>
         <ListHeader enable={false}>Bookmarks</ListHeader>
-        <SearchList>
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-          <SearchListItem />
-        </SearchList>
-        {/* <ListMessage>
+        <ListMessage>
           List empty. Bookmarked words will show up here.
-        </ListMessage> */}
+        </ListMessage>
       </main>
       <style jsx>{`
         main {
