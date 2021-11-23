@@ -1,4 +1,5 @@
 import NavBarItem from './NavBarItem';
+import { useRouter } from 'next/router';
 import { useThemeContext } from '../context/ThemeContext';
 
 const routes = ['search', 'recent', 'bookmarks', 'settings'];
@@ -77,6 +78,11 @@ const svgs = {
 
 export default function NavBar() {
   const { theme } = useThemeContext();
+  const router = useRouter();
+
+  if (router.pathname.substring(1) === 'define') {
+    return null;
+  }
 
   return (
     <>
