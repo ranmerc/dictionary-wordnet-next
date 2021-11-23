@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { useThemeContext } from '../context/ThemeContext';
 
-export default function SearchListItem({ lemma, pos, def, sense }) {
+export default function SearchListItem({ lemma, pos, def, offset }) {
   const { theme } = useThemeContext();
   return (
     <>
-      <Link href={`/define/${sense}`}>
+      <Link href={`/define?offset=${offset}&pos=${pos}`}>
         <a>
           <div>
             <h3>{lemma.replace(/\_/g, ' ')}</h3>
@@ -20,10 +20,17 @@ export default function SearchListItem({ lemma, pos, def, sense }) {
                     return 'verb';
                   case 'r':
                     return 'adverb';
-                  case 's':
-                    return 'sat adj';
+                    /* 
+                      querysense now returns pos 'a'
+                      instead of 's'. see api/querysense
+                      for more information.
+                    */
+                    {
+                      /* case 's':
+                    return 'sat adj'; */
+                    }
                   default:
-                    console.log(match);
+                    console.error(`Unknown Part of Speech ${match}`);
                     return 'unknown';
                 }
               })})`}
@@ -59,7 +66,7 @@ export default function SearchListItem({ lemma, pos, def, sense }) {
           font-style: italic;
         }
         p {
-          font-size: 0.875rem;
+          font-size: 0.95rem;
         }
       `}</style>
       <style jsx>{`

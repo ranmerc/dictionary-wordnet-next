@@ -55,7 +55,7 @@ export default function search() {
           <SearchList>
             {data &&
               data.map((meaning) => {
-                return <SearchListItem {...meaning} key={meaning.sense} />;
+                return <SearchListItem {...meaning} key={meaning.offset} />;
               })}
           </SearchList>
         </section>
