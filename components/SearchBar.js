@@ -1,14 +1,18 @@
+import { useState } from 'react';
 import { useThemeContext } from '../context/ThemeContext';
 
 export default function SearchBar({ query, setQuery }) {
   const { theme } = useThemeContext();
+  const [input, setInput] = useState('');
 
   const clearInput = () => {
+    setInput('');
     setQuery('');
   };
 
   const handleInputChange = ({ target }) => {
-    setQuery(target.value);
+    setInput(target.value);
+    setQuery(target.value.trim());
   };
 
   return (
@@ -36,7 +40,7 @@ export default function SearchBar({ query, setQuery }) {
         <input
           type="text"
           id="query-input"
-          value={query}
+          value={input}
           onChange={handleInputChange}
         />
         {/* clear input button */}
