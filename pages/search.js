@@ -14,6 +14,11 @@ export default function search() {
     query ? `/api/querysense?word=${query}` : null
   );
 
+  // print error to console
+  if (isError) {
+    console.error(isError.toString());
+  }
+
   return (
     <>
       <Head>
