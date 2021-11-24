@@ -31,7 +31,7 @@ export default async (req, res) => {
           in place of pos 's'. works as expected with 's'
         */
         pos: result.pos === 's' ? 'a' : result.pos,
-        lemma: result.lemma,
+        lemma: result.lemma.replace(/\_/g, ' '),
         def: result.def,
       });
     }

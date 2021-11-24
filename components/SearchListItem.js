@@ -9,7 +9,7 @@ export default function SearchListItem({ lemma, pos, def, offset }) {
       <Link href={`/define?offset=${offset}&pos=${pos}`}>
         <a>
           <div>
-            <h3>{lemma.replace(/\_/g, ' ')}</h3>
+            <h3>{lemma}</h3>
             <span>{`(${deducePOS(pos)})`}</span>
           </div>
           <p>{def}</p>
