@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import deducePOS from '../utils/deducePOS';
 import { useThemeContext } from '../context/ThemeContext';
 
 export default function SearchListItem({ lemma, pos, def, offset }) {
@@ -9,32 +10,7 @@ export default function SearchListItem({ lemma, pos, def, offset }) {
         <a>
           <div>
             <h3>{lemma.replace(/\_/g, ' ')}</h3>
-            <span>
-              {`(${pos.replace(/./, (match) => {
-                switch (match) {
-                  case 'n':
-                    return 'noun';
-                  case 'a':
-                    return 'adjective';
-                  case 'v':
-                    return 'verb';
-                  case 'r':
-                    return 'adverb';
-                    /* 
-                      querysense now returns pos 'a'
-                      instead of 's'. see api/querysense
-                      for more information.
-                    */
-                    {
-                      /* case 's':
-                    return 'sat adj'; */
-                    }
-                  default:
-                    console.error(`Unknown Part of Speech ${match}`);
-                    return 'unknown';
-                }
-              })})`}
-            </span>
+            <span>{`(${deducePOS(pos)})`}</span>
           </div>
           <p>{def}</p>
         </a>
