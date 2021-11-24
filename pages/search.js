@@ -1,13 +1,13 @@
 import Head from 'next/head';
-import { useState } from 'react';
 import useFetch from '../hooks/useFetch';
 import SearchBar from '../components/SearchBar';
 import SearchList from '../components/SearchList';
 import ListMessage from '../components/ListMessage';
+import { useQueryContext } from '../context/QueryContext';
 import SearchListItem from '../components/SearchListItem';
 
 export default function search() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useQueryContext();
   // dont fetch if query is empty
   // https://swr.vercel.app/docs/conditional-fetching#conditional
   const { data, isLoading, isError } = useFetch(
