@@ -1,18 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useThemeContext } from '../context/ThemeContext';
 
 export default function SearchBar({ query, setQuery }) {
   const { theme } = useThemeContext();
-  const [input, setInput] = useState('');
+  // initialise with query, useful when navigating back
+  const [input, setInput] = useState(query);
+
+  // change query accordingly when input changes
+  useEffect(() => {
+    setQuery(input.trim());
+  }, [input]);
 
   const clearInput = () => {
     setInput('');
-    setQuery('');
   };
 
   const handleInputChange = ({ target }) => {
     setInput(target.value);
-    setQuery(target.value.trim());
   };
 
   return (
@@ -44,7 +48,7 @@ export default function SearchBar({ query, setQuery }) {
           onChange={handleInputChange}
         />
         {/* clear input button */}
-        <button onClick={clearInput}>
+        <button type="reset" onClick={clearInput}>
           <svg
             width="28"
             height="28"
