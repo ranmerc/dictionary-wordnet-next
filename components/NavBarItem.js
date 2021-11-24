@@ -1,23 +1,49 @@
-import { useThemeContext } from '../context/ThemeContext';
 import Link from 'next/link';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
+import { useThemeContext } from '../context/ThemeContext';
 
-export default function NavBarItem({ route, svg }) {
+export default function NavBarItem({ route, svg, href, check }) {
   const router = useRouter();
-
   const { theme } = useThemeContext();
+
   return (
     <>
       <li>
-        <Link href={`/${route}`}>
-          <a>
+        {/* check signifies whether the navbaritem is link or checkbox
+          (as used in bookmark checkbox on /define)
+         */}
+        {!check && (
+          <Link href={href || `/${route}`}>
+            <a>
+              {svg}
+              <div>{route}</div>
+            </a>
+          </Link>
+        )}
+        {check && (
+          <label>
             {svg}
+            <input
+              type="checkbox"
+              checked={check.isCheck}
+              onChange={check.handleCheckChange}
+            />
             <div>{route}</div>
-          </a>
-        </Link>
+          </label>
+        )}
       </li>
       <style jsx>{`
-        a {
+        input[type='checkbox'] {
+          // https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/
+          position: absolute;
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+        a,
+        li > label {
           text-decoration: none;
           // a > div
           text-transform: capitalize;
@@ -29,10 +55,12 @@ export default function NavBarItem({ route, svg }) {
         li {
           display: grid;
           padding: 0.5rem 0;
+          position: relative;
         }
       `}</style>
       <style jsx>{`
-        a {
+        a,
+        li > label {
           // a > div
           color: ${theme.color[11]};
         }
