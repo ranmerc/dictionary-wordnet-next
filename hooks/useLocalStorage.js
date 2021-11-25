@@ -49,7 +49,7 @@ export default function useLocalStorage(key, initialState, reducer) {
     }
     // before writing to local storage check if stored object is same as state
     // prevents unnecessary writes to localStorage
-    if (window && JSON.stringify(window.localStorage.getItem(key)) !== state) {
+    if (window && window.localStorage.getItem(key) !== JSON.stringify(state)) {
       localStorage.setItem(key, JSON.stringify(state));
     }
   }, [state]);
