@@ -1,6 +1,8 @@
-import { useState } from 'react';
 // this component basically extends navbaritem by adding a state
 import NavBarItem from './NavBarItem';
+import { useSenseContext } from '../context/SenseContext';
+import { useBookmarkContext } from '../context/BookmarkContext';
+import { useEffect, useState, useLayoutEffect, useRef } from 'react';
 
 const svgs = {
   bookmark: (
@@ -38,7 +40,49 @@ const svgs = {
 };
 
 export default function BookmarkCheckBox() {
+  const { bookmark, setBookmark } = useBookmarkContext();
+  // to get the details about currently opened defintion
+  const [sense, _] = useSenseContext();
   const [isCheck, setIsCheck] = useState(false);
+  /* 
+    to stop effects from triggering on first value change
+    because isCheck is initialized with false, the first 
+    value change to false causes unwanted removal from 
+    bookmark list
+  */
+  const firstTime = useRef(true);
+
+  useEffect(() => {
+    if (firstTime.current) {
+      firstTime.current = false;
+      return;
+    }
+    if (isCheck) {
+      setBookmark({
+        type: 'ADD',
+        value: sense,
+      });
+    } else {
+      // removing occurs by offset
+      setBookmark({
+        type: 'REMOVE',
+        value: sense.offset,
+      });
+    }
+  }, [isCheck]);
+
+  /* 
+    this is for definition page transitions,
+    changes visual appearance of button accordingly
+  */
+  useLayoutEffect(() => {
+    setIsCheck(() => {
+      // check if current word is in bookmark list
+      return bookmark.some((book) => {
+        return book.offset === sense.offset;
+      });
+    });
+  }, [sense]);
 
   const handleCheckChange = () => {
     setIsCheck(!isCheck);
