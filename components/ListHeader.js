@@ -1,13 +1,17 @@
 import Heading from './Heading';
 import { useThemeContext } from '../context/ThemeContext';
 
-export default function ListHeader({ children, enable = false }) {
+export default function ListHeader({
+  children,
+  handleClick,
+  disabled = false,
+}) {
   const { theme } = useThemeContext();
 
   return (
     <div>
       <Heading type="h1">{children}</Heading>
-      <button aria-label="Clear All">
+      <button aria-label="Clear All" disabled={disabled} onClick={handleClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
@@ -35,7 +39,7 @@ export default function ListHeader({ children, enable = false }) {
       `}</style>
       <style jsx>{`
         svg {
-          color: ${theme.gray[enable ? 11 : 10]};
+          color: ${theme.gray[disabled ? 10 : 11]};
         }
       `}</style>
     </div>
