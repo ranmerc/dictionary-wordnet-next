@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 import errorEgg from '../utils/errorEgg';
 import { getSense } from './api/getsense';
 import deducePOS from '../utils/deducePOS';
@@ -7,14 +8,26 @@ import { useThemeContext } from '../context/ThemeContext';
 import RelatedSection from '../components/RelatedSection';
 import SimilarSection from '../components/SimilarSection';
 import DefinitionSection from '../components/DefinitionSection';
+import { useRecentContext } from '../context/RecentContext';
 
 export default function define({ sense, error }) {
   const { theme } = useThemeContext();
+  const { setRecent } = useRecentContext();
+
   // error easter egg
   if (error) {
     console.error(error);
     sense = errorEgg;
   }
+
+  useEffect(() => {
+    if (!error)
+      setRecent({
+        type: 'ADD',
+        value: sense,
+      });
+  }, [sense]);
+
   return (
     <>
       <Head>
