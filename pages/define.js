@@ -7,11 +7,13 @@ import XRefSection from '../components/XRefSection';
 import { useThemeContext } from '../context/ThemeContext';
 import RelatedSection from '../components/RelatedSection';
 import SimilarSection from '../components/SimilarSection';
-import DefinitionSection from '../components/DefinitionSection';
+import { useSenseContext } from '../context/SenseContext';
 import { useRecentContext } from '../context/RecentContext';
+import DefinitionSection from '../components/DefinitionSection';
 
 export default function define({ sense, error }) {
   const { theme } = useThemeContext();
+  const [_, setSense] = useSenseContext();
   const { setRecent } = useRecentContext();
 
   // error easter egg
@@ -21,11 +23,17 @@ export default function define({ sense, error }) {
   }
 
   useEffect(() => {
-    if (!error)
+    if (!error) {
+      // if no error set the current returned meaning
+      setSense(sense);
       setRecent({
         type: 'ADD',
         value: sense,
       });
+    } else {
+      // else set easter egg
+      setSense(errorEgg);
+    }
   }, [sense]);
 
   return (

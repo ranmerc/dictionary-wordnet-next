@@ -1,5 +1,6 @@
 // contains sense for lemma 'error'.
 const errorEgg = {
+  offset: 7299569,
   lemma: 'error',
   pos: 'n',
   synonyms: ['error', 'computer error'],
