@@ -40,6 +40,8 @@ const reducer = (state, action) => {
         gray: colors[state.grayName][!state.darkMode ? 'dark' : 'light'],
         color: colors[state.colorName][!state.darkMode ? 'dark' : 'light'],
       };
+    default:
+      throw new Error(`Invalid reducer type '${action.type}'`);
   }
 };
 

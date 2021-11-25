@@ -20,6 +20,8 @@ const reducer = (state, action) => {
       );
     case 'CLEAR':
       return [];
+    default:
+      throw new Error(`Invalid reducer type '${action.type}'`);
   }
 };
 
