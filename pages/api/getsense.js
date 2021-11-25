@@ -1,9 +1,8 @@
 const Wordnet = require('node-wordnet');
 const wordnet = new Wordnet();
 
-// extract findsense logic to use elsewhere if required.
-export async function getSense(offset, pos) {
-  await wordnet.open();
+// extract findsense logic to use elsewhere if required
+async function getsense(offset, pos) {
   const result = await wordnet.get(offset, pos);
   // remove duplicate ptrs
   const uniqueOffsets = [];
@@ -22,6 +21,8 @@ export async function getSense(offset, pos) {
     ).lemma;
   }
   return {
+    // for recent, bookmarks lists
+    offset: result.synsetOffset,
     // replace _ with space
     lemma: result.lemma.replace(/\_/g, ' '),
     pos: result.pos,
@@ -46,7 +47,18 @@ export async function getSense(offset, pos) {
   };
 }
 
-export default async function handler(req, res) {
+/* 
+  using wordnet.close() after wordnet.get() in the 
+  same function causes errors
+*/
+export async function getSense(offset, pos) {
+  await wordnet.open();
+  const result = await getsense(offset, pos);
+  await wordnet.close();
+  return result;
+}
+
+export default async function getSenseHandler(req, res) {
   try {
     let { offset, pos } = req.query;
     // if invalid query
