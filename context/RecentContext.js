@@ -3,7 +3,7 @@ import useLocalStorage from '../hooks/useLocalStorage';
 
 const RecentContext = createContext();
 
-const RECENT_SIZE = 50;
+const RECENT_SIZE = 20;
 
 // state is previous state, action is object passed to dispatch
 const reducer = (state, action) => {
@@ -11,6 +11,12 @@ const reducer = (state, action) => {
     case 'init_stored':
       return action.value;
     case 'ADD':
+      /*
+       add new item to the starting of the list
+       and remove the item if it was already in the list
+       and finally remove elements from the end to fit 
+       the max size limit
+      */
       return [action.value].concat(
         state
           .filter((sense) => {

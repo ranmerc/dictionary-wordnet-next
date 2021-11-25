@@ -5,7 +5,9 @@ import Layout from '../components/Layout';
 import { IdProvider } from '@radix-ui/react-id';
 import { ThemeProvider } from '../context/ThemeContext';
 import { QueryProvider } from '../context/QueryContext';
+import { SenseProvider } from '../context/SenseContext';
 import { RecentProvider } from '../context/RecentContext';
+import { BookmarkProvider } from '../context/BookmarkContext';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,17 +17,25 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {/* from radix-ui for consistent ssr */}
       <IdProvider>
+        {/* custom theme provider */}
         <ThemeProvider>
           {/* persistent query input between page navigation */}
           <QueryProvider>
-            <RecentProvider>
-              {/* custom layout skeleton for the app */}
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
-              {/* nav bar present on every page */}
-              <NavBar />
-            </RecentProvider>
+            {/* access currently viewing defintion across pages */}
+            <SenseProvider>
+              {/* access bookmark list anywhere */}
+              <BookmarkProvider>
+                {/* access recent list anywhere */}
+                <RecentProvider>
+                  {/* custom layout skeleton for the app */}
+                  <Layout>
+                    <Component {...pageProps} />
+                  </Layout>
+                  {/* nav bar present on every page */}
+                  <NavBar />
+                </RecentProvider>
+              </BookmarkProvider>
+            </SenseProvider>
           </QueryProvider>
         </ThemeProvider>
       </IdProvider>
