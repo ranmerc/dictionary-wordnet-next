@@ -1,6 +1,8 @@
 import DefineSection from './DefineSection';
+import { useThemeContext } from '../context/ThemeContext';
 
 export default function SimilarSection({ synonyms }) {
+  const { theme } = useThemeContext();
   return (
     <>
       <DefineSection heading="Similar">
@@ -16,6 +18,11 @@ export default function SimilarSection({ synonyms }) {
           column-gap: 1rem;
           flex-wrap: wrap;
           row-gap: 0.2rem;
+        }
+      `}</style>
+      <style jsx>{`
+        div {
+          color: ${theme.gray[11]};
         }
       `}</style>
     </>
