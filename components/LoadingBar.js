@@ -14,7 +14,6 @@ export default function LoadingBar() {
       setOpacity(1);
       // increase progress every 500ms
       interval = setInterval(() => {
-        console.log('running');
         // ieee 754
         setProgress((progress) => progress + 0.05);
       }, 500);

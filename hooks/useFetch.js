@@ -1,7 +1,6 @@
 import useSWR from 'swr';
 
 const fetcher = async (url) => {
-  console.log('fetching', url);
   const res = await fetch(url);
   if (!res.ok) {
     const error = await res.json();
