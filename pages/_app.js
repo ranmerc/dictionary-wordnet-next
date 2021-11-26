@@ -3,6 +3,7 @@ import '../styles/global.css';
 import NavBar from '../components/NavBar';
 import Layout from '../components/Layout';
 import { IdProvider } from '@radix-ui/react-id';
+import LoadingBar from '../components/LoadingBar';
 import { ThemeProvider } from '../context/ThemeContext';
 import { QueryProvider } from '../context/QueryContext';
 import { SenseProvider } from '../context/SenseContext';
@@ -27,6 +28,8 @@ function MyApp({ Component, pageProps }) {
               <BookmarkProvider>
                 {/* access recent list anywhere */}
                 <RecentProvider>
+                  {/* show loading bar when loading */}
+                  <LoadingBar />
                   {/* custom layout skeleton for the app */}
                   <Layout>
                     <Component {...pageProps} />
