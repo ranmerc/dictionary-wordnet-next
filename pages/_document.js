@@ -9,7 +9,11 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+          <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        </Head>
         <body>
           <Main />
           <NextScript />
