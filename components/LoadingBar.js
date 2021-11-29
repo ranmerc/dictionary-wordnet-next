@@ -42,7 +42,7 @@ export default function LoadingBar() {
   }, [router]);
   return (
     <>
-      <div role="progressbar" id="progressbar"></div>
+      <div role="progressbar" id="progressbar" title="Loading page"></div>
       <style jsx>{`
         div {
           position: fixed;
