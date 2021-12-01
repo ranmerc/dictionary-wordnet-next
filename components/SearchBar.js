@@ -48,7 +48,7 @@ export default function SearchBar({ query, setQuery }) {
           onChange={handleInputChange}
         />
         {/* clear input button */}
-        <button type="reset" onClick={clearInput}>
+        <button type="reset" onClick={clearInput} title="Clear input">
           <svg
             width="28"
             height="28"

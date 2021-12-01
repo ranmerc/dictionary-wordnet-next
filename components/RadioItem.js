@@ -16,6 +16,7 @@ export default function RadioItem({ color, colorName }) {
           style={{ background: color }}
           id={`color_${colorName}`}
           value={colorName}
+          title={`Switch to ${colorName}`}
         >
           {/* this converts down to a span that become child of selected button */}
           <RadioGroup.Indicator

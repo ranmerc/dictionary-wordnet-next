@@ -14,6 +14,7 @@ export default function SwitchToggle({ id, checked, onCheckedChange }) {
         checked={checked}
         onCheckedChange={onCheckedChange}
         id={id}
+        title={`Toggle dark mode`}
       >
         <Switch.Thumb className="switch_thumb" />
       </Switch.Root>

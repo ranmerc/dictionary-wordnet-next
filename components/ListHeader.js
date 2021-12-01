@@ -11,7 +11,12 @@ export default function ListHeader({
   return (
     <div>
       <Heading type="h1">{children}</Heading>
-      <button aria-label="Clear All" disabled={disabled} onClick={handleClick}>
+      <button
+        aria-label="Clear All"
+        disabled={disabled}
+        onClick={handleClick}
+        title="Clear All"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
