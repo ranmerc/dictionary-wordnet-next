@@ -103,7 +103,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav>
+      <nav id="navbar">
         {/* return normal navbar if not on /define */}
         {!ifDefine && (
           <ul>

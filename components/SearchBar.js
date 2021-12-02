@@ -19,6 +19,18 @@ export default function SearchBar({ query, setQuery }) {
     setInput(target.value);
   };
 
+  const handleInputFocus = () => {
+    if (screen.width <= 640) {
+      document.querySelector('#navbar').style.display = 'none';
+    }
+  };
+
+  const handleInputBlur = () => {
+    if (screen.width <= 640) {
+      document.querySelector('#navbar').removeAttribute('style');
+    }
+  };
+
   return (
     <>
       <div>
@@ -46,6 +58,8 @@ export default function SearchBar({ query, setQuery }) {
           id="query-input"
           value={input}
           onChange={handleInputChange}
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
         />
         {/* clear input button */}
         <button type="reset" onClick={clearInput} title="Clear input">
