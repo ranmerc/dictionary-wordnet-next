@@ -25,7 +25,11 @@ async function getsense(offset, pos) {
     offset: result.synsetOffset,
     // replace _ with space
     lemma: result.lemma.replace(/\_/g, ' '),
-    pos: result.pos,
+    /*
+      wordnet.get() expects pos as 'a'
+      if pos is 's' but returns 's' itself
+    */
+    pos: result.pos === 's' ? 'a' : result.pos,
     synonyms: result.synonyms.map((synonym) => {
       return synonym.replace(/\_/g, ' ');
     }),
