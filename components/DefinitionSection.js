@@ -37,11 +37,11 @@ export default function DefinitionSection({ def, exp }) {
         // very ugly selectors
         p > span {
           margin-left: 0.3rem;
-          display: inline-grid;
-          grid-auto-flow: column;
-          column-gap: 0.2rem;
-          align-items: baseline;
           font-size: 1.1rem;
+        }
+        p > span > svg {
+          margin-right: 0.1rem;
+          vertical-align: middle;
         }
       `}</style>
       <style jsx>{`
