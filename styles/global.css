@@ -6,9 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* experimental */
-  transition: color 250ms;
-  transition: background-color 250ms;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
