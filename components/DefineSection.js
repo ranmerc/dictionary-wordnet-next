@@ -16,6 +16,7 @@ export default function DefineSection({ heading, children }) {
         }
 
         section h3 {
+          font-family: 'Inter', sans-serif;
           font-size: 1.25rem;
         }
       `}</style>

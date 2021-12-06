@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import { useThemeContext } from '../context/ThemeContext';
 import Heading from '../components/Heading';
-import SwitchToggle from '../components/SwitchToggle';
-import ColorSwatch from '../components/ColorSwatch';
 import { useEffect, useState } from 'react';
+import ColorSwatch from '../components/ColorSwatch';
+import SwitchToggle from '../components/SwitchToggle';
+import { useThemeContext } from '../context/ThemeContext';
 
 export default function Settings() {
   const { theme, setTheme } = useThemeContext();
@@ -55,14 +55,26 @@ export default function Settings() {
             <ColorSwatch />
           </form>
         </section>
+        {/* 
+          wordnet citation 
+          https://wordnet.princeton.edu/citing-wordnet 
+        */}
+        <section>
+          <Heading type="h2">Citation</Heading>
+          <p>
+            Princeton University "About WordNet."{' '}
+            <a href="https://wordnet.princeton.edu">WordNet</a>. Princeton
+            University. 2010.&nbsp;
+          </p>
+        </section>
         <style jsx>{`
           main {
             display: grid;
             row-gap: 2.2rem;
+            font-family: 'Inter', sans-serif;
           }
 
           label {
-            font-family: 'Inter', sans-serif;
             font-size: 1.2rem;
             font-weight: 600;
           }
@@ -85,6 +97,12 @@ export default function Settings() {
         `}</style>
         <style jsx>{`
           label {
+            color: ${theme.color[10]};
+          }
+          p {
+            color: ${theme.gray[11]};
+          }
+          a {
             color: ${theme.color[10]};
           }
         `}</style>
