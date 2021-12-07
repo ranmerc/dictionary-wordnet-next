@@ -6,6 +6,11 @@ import { useThemeContext } from '../context/ThemeContext';
 export default function RelatedSection({ ptrs }) {
   const { theme } = useThemeContext();
 
+  // don't render anything if there are no ptrs
+  if (ptrs.length === 0) {
+    return null;
+  }
+
   /* 
     convert array of ptrs to a accumulated 
     object having sym as key

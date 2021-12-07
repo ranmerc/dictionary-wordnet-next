@@ -3,6 +3,12 @@ import { useThemeContext } from '../context/ThemeContext';
 
 export default function SimilarSection({ synonyms }) {
   const { theme } = useThemeContext();
+
+  // don't render anything if there are no synonyms
+  if (synonyms.length === 0) {
+    return null;
+  }
+
   return (
     <>
       <DefineSection heading="Similar">
