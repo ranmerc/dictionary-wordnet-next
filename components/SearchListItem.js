@@ -36,6 +36,8 @@ export default function SearchListItem({ lemma, pos, def, offset }) {
         h3 {
           font-weight: 700;
           font-size: 1.625rem;
+          // senses with mutliple words was wrapping on space
+          white-space: nowrap;
         }
         span {
           font-size: 0.8125rem;
