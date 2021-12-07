@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import DefineSection from './DefineSection';
+import SymbolTooltip from './SymbolTooltip';
 import { useThemeContext } from '../context/ThemeContext';
 
 export default function RelatedSection({ ptrs }) {
@@ -29,7 +30,9 @@ export default function RelatedSection({ ptrs }) {
                   justifyContent: 'start',
                 }}
               >
-                <span>{sym}</span>
+                <span>
+                  <SymbolTooltip sym={sym} />
+                </span>
                 <div>
                   {ptrs[sym].map((ptr) => {
                     return (
