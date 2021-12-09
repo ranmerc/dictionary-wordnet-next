@@ -20,14 +20,14 @@ export default function SearchBar({ query, setQuery }) {
   };
 
   const handleInputFocus = () => {
-    if (screen.width <= 640) {
+    if (matchMedia('(hover:none) and (pointer:coarse)').matches) {
       document.querySelector('#navbar').style.display = 'none';
     }
   };
 
   const handleInputBlur = () => {
-    if (screen.width <= 640) {
-      document.querySelector('#navbar').removeAttribute('style');
+    if (matchMedia('(hover:none) and (pointer:coarse)').matches) {
+      document.querySelector('#navbar').style.display = 'block';
     }
   };
 
