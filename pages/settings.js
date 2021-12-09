@@ -55,6 +55,21 @@ export default function Settings() {
             <ColorSwatch />
           </form>
         </section>
+        <section>
+          <Heading type="h2">About</Heading>
+          <p>
+            This is a frontend for Wordnet much like{' '}
+            <a href="http://wordnetweb.princeton.edu/perl/webwn">
+              Wordnet Online
+            </a>{' '}
+            but simple and modern . This is an open source project, check it out
+            on{' '}
+            <a href="https://github.com/deadmercury/dictionary-wordnet-next">
+              Github
+            </a>
+            .
+          </p>
+        </section>
         {/* 
           wordnet citation 
           https://wordnet.princeton.edu/citing-wordnet 
