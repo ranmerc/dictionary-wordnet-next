@@ -33,32 +33,32 @@ export default function search() {
         >
           <SearchBar query={query} setQuery={setQuery} />
         </form>
-        <section>
-          {/* no input, show encouraging message */}
-          {!query && (
-            <ListMessage>
-              Type your word above. Results will show up here!
-            </ListMessage>
-          )}
-          {/* input and loading */}
-          {query && isLoading && <ListMessage>Loading...</ListMessage>}
-          {/* no result found */}
-          {Array.isArray(data) && !data.length && (
-            <ListMessage>No word found. Try to be specific</ListMessage>
-          )}
-          {/* fails eg. no internet connection */}
-          {isError && (
-            <ListMessage>
-              Something went wrong! Check your internet connection!
-            </ListMessage>
-          )}
+        {/* no input, show encouraging message */}
+        {!query && (
+          <ListMessage>
+            Type your word above. Results will show up here!
+          </ListMessage>
+        )}
+        {/* input and loading */}
+        {query && isLoading && <ListMessage>Loading...</ListMessage>}
+        {/* no result found */}
+        {Array.isArray(data) && !data.length && (
+          <ListMessage>No word found. Try to be specific!</ListMessage>
+        )}
+        {/* fails eg. no internet connection */}
+        {isError && (
+          <ListMessage>
+            Something went wrong! Check your internet connection!
+          </ListMessage>
+        )}
+        {/* display search list if successful */}
+        {data && (
           <SearchList>
-            {data &&
-              data.map((meaning) => {
-                return <SearchListItem {...meaning} key={meaning.offset} />;
-              })}
+            {data.map((meaning) => {
+              return <SearchListItem {...meaning} key={meaning.offset} />;
+            })}
           </SearchList>
-        </section>
+        )}
         <style jsx>{`
           main {
             display: grid;
