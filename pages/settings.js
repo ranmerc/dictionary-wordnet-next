@@ -62,7 +62,7 @@ export default function Settings() {
             <a href="http://wordnetweb.princeton.edu/perl/webwn">
               Wordnet Online
             </a>{' '}
-            but simple and modern . This is an open source project, check it out
+            but simple and modern. This is an open source project, check it out
             on{' '}
             <a href="https://github.com/deadmercury/dictionary-wordnet-next">
               Github

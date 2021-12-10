@@ -1,6 +1,6 @@
 # Dictionary Wordnet
 
-Alternate frontend for Wordnet. Built with NextJS with [node-wordnet](https://github.com/morungos/wordnet). Has colorways insipired by [Firefox](https://support.mozilla.org/en-US/kb/personalize-firefox-colorways) made possible by [radix-ui/colors](https://www.radix-ui.com/colors). Deployed on vercel [here](https://dictionary-wordnet-next.vercel.app/search).
+Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://github.com/morungos/wordnet) as backend. Has colorways insipired by [Firefox](https://support.mozilla.org/en-US/kb/personalize-firefox-colorways) made possible by [radix-ui/colors](https://www.radix-ui.com/colors). Deployed on vercel [here](https://dictionary-wordnet-next.vercel.app/).
 
 ## Stack
 
@@ -8,9 +8,11 @@ Alternate frontend for Wordnet. Built with NextJS with [node-wordnet](https://gi
 
 - NextJS [API Routes](https://nextjs.org/docs/api-routes/introduction) to build a Wordnet API using [node-wordnet](https://github.com/morungos/wordnet).
 
+- [radix-ui/colors](https://www.radix-ui.com/colors) for theme colors.
+
 - [radix-ui/primitives](https://www.radix-ui.com/docs/primitives/overview/introduction) for UI components - [radix-ui/react-radio-group](https://www.radix-ui.com/docs/primitives/components/radio-group), [@radix-ui/react-switch](https://www.radix-ui.com/docs/primitives/components/switch), [@radix-ui/react-tooltip](https://www.radix-ui.com/docs/primitives/components/tooltip).
 
-- Client side navigation with [SWR](https://swr.vercel.app/).
+- Client side data fetching with [SWR](https://swr.vercel.app/).
 
 ## References
 
@@ -34,7 +36,7 @@ Alternate frontend for Wordnet. Built with NextJS with [node-wordnet](https://gi
 
 - My notes on Wordnet and node-wordnet on [Notion](https://ranmerc.notion.site/Wordnet-29a276bd0c81418d8e6da27f556a63db).
 
-- I started off with styled-components for styling as I wanted dynamic colors but as of now [swc does not work with styled-components](https://github.com/vercel/next.js/discussions/30174. So I had to switch to built in [styled-jsx](https://github.com/vercel/styled-jsx).
+- I started off with styled-components for styling as I wanted dynamic colors but as of now [swc does not work with styled-components](https://github.com/vercel/next.js/discussions/30174). So I had to switch to built in [styled-jsx](https://github.com/vercel/styled-jsx).
 
 - Its nice to have something like styled-jsx built in into NextJS but you can have only one style jsx block per component. So it really forces you to write components.
 
