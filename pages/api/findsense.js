@@ -1,3 +1,8 @@
+/* 
+  https://github.com/morungos/wordnet#findsensequery
+  /api/findsense?word=<sense>+<pos>+<number>
+  calls the wordnet.findSense and returns the results as is
+*/
 const Wordnet = require('node-wordnet');
 const wordnet = new Wordnet();
 
@@ -21,6 +26,8 @@ export default async function handler(req, res) {
     res.status(200).json(results);
   } catch (e) {
     console.error(e);
-    res.status(500).json(e.message);
+    res.status(500).json({
+      error: e.message,
+    });
   }
 }

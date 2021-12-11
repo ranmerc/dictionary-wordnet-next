@@ -1,13 +1,12 @@
-/* /api/querysense?word=<word to be defined>
-   returns sense, lemma, pos, def
-   eg. for /api/querysense?word=bow returns 
-   an array of objects like-
-   {
-     offset: '2880189',
-     lemma: 'bow',
-     pos: 'n',
-     def: 'a knot with two loops and loose ends',
-   }
+/* 
+  /api/querysense?word=bow returns 
+  an array of objects like-
+  {
+    offset: '2880189',
+    lemma: 'bow',
+    pos: 'n',
+    def: 'a knot with two loops and loose ends',
+  }
 */
 const Wordnet = require('node-wordnet');
 const wordnet = new Wordnet();
@@ -38,6 +37,8 @@ export default async (req, res) => {
     res.status(200).json(results);
   } catch (e) {
     console.error(e);
-    res.status(500).json(e.message);
+    res.status(500).json({
+      error: e.message,
+    });
   }
 };

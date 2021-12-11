@@ -1,7 +1,27 @@
+/* 
+  /api/getsense?offset=1076017&pos=v 
+  returns the following object-
+  {
+    offset: 1076017,
+    lemma: 'cricket',
+    pos: 'v',
+    synonyms: ['cricket'],
+    def: 'play cricket ',
+    exp: [],
+    ptrs: [
+      {
+        lemma: 'play',
+        pos: 'v',
+        sym: '@',
+        offset: 1072949,
+      },
+    ],
+  };
+*/
 const Wordnet = require('node-wordnet');
 const wordnet = new Wordnet();
 
-// extract findsense logic to use elsewhere if required
+// extract getsense logic to use elsewhere if required
 async function getsense(offset, pos) {
   const result = await wordnet.get(offset, pos);
   // remove duplicate ptrs
@@ -76,6 +96,8 @@ export default async function getSenseHandler(req, res) {
     res.status(200).json(result);
   } catch (e) {
     console.error(e);
-    res.status(500).json(e.message);
+    res.status(500).json({
+      error: e.message,
+    });
   }
 }
