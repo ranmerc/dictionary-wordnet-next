@@ -76,6 +76,21 @@ async function getsense(offset, pos) {
   same function causes errors
 */
 export async function getSense(offset, pos) {
+  // offset or pos not present
+  if (!offset || !pos) {
+    throw new Error(
+      `Invalid Query String. Requires 'offset' and 'pos' query param.`
+    );
+  }
+  // offset is not numerical
+  if (!offset.match(/^[0-9]+$/)) {
+    throw new Error(`Invalid Query String. Synset offset must be an integer.`);
+  }
+  // unknown pos
+  if (!['a', 'n', 'v', 'r'].includes(pos)) {
+    throw new Error(`Invalid Query String. Part of speech must be (n|v|a|r).`);
+  }
+  offset = parseInt(offset);
   await wordnet.open();
   const result = await getsense(offset, pos);
   await wordnet.close();
@@ -85,13 +100,6 @@ export async function getSense(offset, pos) {
 export default async function getSenseHandler(req, res) {
   try {
     let { offset, pos } = req.query;
-    // if invalid query
-    if (!offset || !pos) {
-      throw new Error(
-        `Invalid Query String. Requires 'offset' and 'pos' query param.`
-      );
-    }
-    offset = parseInt(offset);
     const result = await getSense(offset, pos);
     res.status(200).json(result);
   } catch (e) {

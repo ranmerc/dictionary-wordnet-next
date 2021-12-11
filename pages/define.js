@@ -94,10 +94,11 @@ export default function define({ sense, error }) {
 export async function getServerSideProps(context) {
   const { offset, pos } = context.query;
   try {
-    if (!offset || !pos) {
-      throw new Error(`Invalid query params. Expected 'offset' and 'pos'.`);
-    }
-    const sense = await getSense(parseInt(offset), pos);
+    /*
+      cannot call getsense api from here
+      https://nextjs.org/docs/basic-features/data-fetching#:~:text=Note%3A%20You%20should%20not%20use%20fetch()%20to%20call%20an%20API%20route%20in%20getServerSideProps.
+    */
+    const sense = await getSense(offset, pos);
     return {
       props: {
         sense,
