@@ -32,6 +32,12 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 
 - How to detect touch device in 2019? on [StackOverflow](https://stackoverflow.com/a/63666289).
 
+- Internal API fetch with getServerSideProps? (Next.js) on [StackOverflow](https://stackoverflow.com/a/65760948).
+
+- [Debounce in JavaScript — Improve Your Application’s Performance](https://levelup.gitconnected.com/debounce-in-javascript-improve-your-applications-performance-5b01855e086).
+
+- [Perform debounce in React.js] on [StackOverflow](https://stackoverflow.com/a/58594348/10469084)
+
 ## Notes
 
 - My notes on Wordnet and node-wordnet on [Notion](https://ranmerc.notion.site/Wordnet-29a276bd0c81418d8e6da27f556a63db).

@@ -1,14 +1,17 @@
-import { useState, useEffect } from 'react';
+import debouncer from '../utils/debouncer';
 import { useThemeContext } from '../context/ThemeContext';
+import { useState, useEffect, useCallback } from 'react';
 
 export default function SearchBar({ query, setQuery }) {
   const { theme } = useThemeContext();
   // initialise with query, useful when navigating back
   const [input, setInput] = useState(query);
+  const setQueryDebounce = useCallback(debouncer(setQuery, 500), []);
 
   // change query accordingly when input changes
   useEffect(() => {
-    setQuery(input.trim());
+    // debounced setQuery
+    setQueryDebounce(input.trim());
   }, [input]);
 
   const clearInput = () => {
