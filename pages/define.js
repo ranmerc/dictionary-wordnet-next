@@ -79,6 +79,18 @@ export default function define({ sense, error }) {
             font-style: italic;
             font-size: 1.4rem;
           }
+
+          /*
+            on bigger screens center content
+          */
+          @media (min-width: 640px) {
+            main {
+              display: flex;
+              flex-direction: column;
+              margin: 4rem auto 2rem;
+              width: 70%;
+            }
+          }
         `}</style>
         <style jsx>{`
           h1,

@@ -126,12 +126,29 @@ export default function NavBar() {
           width: 100%;
           position: fixed;
           bottom: 0;
+          left: 0;
         }
 
         ul {
           display: grid;
           grid-auto-flow: column;
           align-items: center;
+        }
+
+        /* 
+          on bigger screens make 
+          navbar full height
+        */
+        @media (min-width: 640px) {
+          nav {
+            position: static;
+            height: 100vh;
+          }
+
+          ul {
+            grid-auto-flow: row;
+            height: 100%;
+          }
         }
       `}</style>
       {/* separation of dynamic and static styles */}

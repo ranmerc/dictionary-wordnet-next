@@ -26,6 +26,10 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 
 - Wordnet [Documentation](https://wordnet.princeton.edu/documentation/).
 
+- [Debounce in JavaScript — Improve Your Application’s Performance](https://levelup.gitconnected.com/debounce-in-javascript-improve-your-applications-performance-5b01855e086).
+
+- Difference between [automatic sizing of flex-items](https://www.w3.org/TR/css-flexbox-1/#min-size-auto) and [grid-item sizing](https://www.w3.org/TR/css-grid-1/#grid-item-sizing).
+
 - matchMedia removeListener doesn't work? on [StackOverflow](https://stackoverflow.com/a/25980293).
 
 - Make React useEffect hook not run on initial render on [StackOverflow](https://stackoverflow.com/a/26567760).
@@ -34,9 +38,7 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 
 - Internal API fetch with getServerSideProps? (Next.js) on [StackOverflow](https://stackoverflow.com/a/65760948).
 
-- [Debounce in JavaScript — Improve Your Application’s Performance](https://levelup.gitconnected.com/debounce-in-javascript-improve-your-applications-performance-5b01855e086).
-
-- [Perform debounce in React.js] on [StackOverflow](https://stackoverflow.com/a/58594348/10469084)
+- [Perform debounce in React.js] on [StackOverflow](https://stackoverflow.com/a/58594348/10469084).
 
 ## Notes
 
@@ -44,7 +46,9 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 
 - I started off with styled-components for styling as I wanted dynamic colors but as of now [swc does not work with styled-components](https://github.com/vercel/next.js/discussions/30174). So I had to switch to built in [styled-jsx](https://github.com/vercel/styled-jsx).
 
-- Its nice to have something like styled-jsx built in into NextJS but you can have only one style jsx block per component. So it really forces you to write components.
+- Its nice to have something like styled-jsx built in into NextJS but you can have only one style jsx block per component. So it really forces you to write components. Not to mention styled-js is buggy af sometimes breaks on even adding comments.
+
+- Don't need something like styled-components for dynamic styles. Could use [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) for the same effect with CSS Modules.
 
 ## Citation
 

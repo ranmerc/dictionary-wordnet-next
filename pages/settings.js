@@ -109,6 +109,16 @@ export default function Settings() {
             align-items: center;
             justify-content: space-between;
           }
+
+          /*
+            on bigger screens center content
+          */
+          @media (min-width: 640px) {
+            main {
+              margin: 4rem auto 2rem;
+              width: 70%;
+            }
+          }
         `}</style>
         <style jsx>{`
           label {

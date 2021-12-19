@@ -57,6 +57,23 @@ export default function NavBarItem({ route, svg, href, check }) {
           padding: 0.5rem 0;
           position: relative;
         }
+        /*
+          divide nav into equal navitems
+        */
+        @media (min-width: 640px) {
+          a,
+          li > label {
+            height: 100%;
+            display: grid;
+            align-content: center;
+            justify-items: center;
+            padding: 0 0.8rem;
+          }
+
+          li {
+            height: 100%;
+          }
+        }
       `}</style>
       <style jsx>{`
         a,
@@ -70,6 +87,10 @@ export default function NavBarItem({ route, svg, href, check }) {
           background-color: ${router.pathname.substring(1) === route
             ? theme.color[4]
             : 'transparent'};
+        }
+
+        li:hover {
+          background-color: ${theme.color[2]};
         }
 
         li:focus-within {

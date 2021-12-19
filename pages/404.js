@@ -13,10 +13,23 @@ export default function Custom404() {
       </Head>
       <main>
         <ListMessage>
-          You seem to be lost! Allow the navigation bar at the bottom to guide
-          you to your destination.
+          You seem to be lost! Allow the navigation bar to guide you to your
+          destination.
         </ListMessage>
       </main>
+      <style jsx>{`
+        /*
+          on bigger screens center content
+        */
+        @media (min-width: 640px) {
+          main {
+            display: flex;
+            flex-direction: column;
+            margin: 4rem auto 2rem;
+            width: 70%;
+          }
+        }
+      `}</style>
     </>
   );
 }

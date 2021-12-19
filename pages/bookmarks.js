@@ -55,6 +55,18 @@ export default function Bookmarks() {
           display: grid;
           row-gap: 2.2rem;
         }
+
+        /*
+          on bigger screens center content
+        */
+        @media (min-width: 640px) {
+          main {
+            display: flex;
+            flex-direction: column;
+            margin: 4rem auto 2rem;
+            width: 70%;
+          }
+        }
       `}</style>
     </>
   );

@@ -10,18 +10,23 @@ export default function Layout({ children }) {
       <div>{children}</div>
       <style jsx>{`
         div {
-          /* using 5rem because min-height 100vh 
-             not working on body
+          /* 
+            using 5rem because min-height 100vh 
+            not working on body
           */
           margin: 2.8rem 0.75rem 5rem 0.75rem;
         }
 
-        // on bigger screen
+        /*
+          on bigger screens don't add margins
+          just make columns for navigation and
+          content
+        */
         @media (min-width: 640px) {
           div {
-            margin-right: auto;
-            margin-left: auto;
-            width: 80vw;
+            margin: 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
           }
         }
       `}</style>

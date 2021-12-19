@@ -32,10 +32,10 @@ function MyApp({ Component, pageProps }) {
                   <LoadingBar />
                   {/* custom layout skeleton for the app */}
                   <Layout>
+                    {/* nav bar present on every page */}
+                    <NavBar />
                     <Component {...pageProps} />
                   </Layout>
-                  {/* nav bar present on every page */}
-                  <NavBar />
                 </RecentProvider>
               </BookmarkProvider>
             </SenseProvider>
