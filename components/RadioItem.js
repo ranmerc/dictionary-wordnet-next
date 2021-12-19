@@ -32,6 +32,7 @@ export default function RadioItem({ color, colorName }) {
         div {
           display: grid;
           justify-content: center;
+          cursor: pointer;
         }
 
         label {

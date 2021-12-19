@@ -41,6 +41,7 @@ export default function NavBarItem({ route, svg, href, check }) {
           height: 100%;
           top: 0;
           left: 0;
+          cursor: pointer;
         }
         a,
         li > label {

@@ -27,6 +27,7 @@ export default function SwitchToggle({ id, checked, onCheckedChange }) {
           width: 3.4rem;
           height: 1.6rem;
           border-radius: 1rem;
+          cursor: pointer;
         }
 
         // this is basically a span
