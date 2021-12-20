@@ -141,7 +141,8 @@ export default function NavBar() {
         */
         @media (min-width: 640px) {
           nav {
-            position: static;
+            position: sticky;
+            top: 0;
             height: 100vh;
           }
 
