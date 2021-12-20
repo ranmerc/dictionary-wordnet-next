@@ -2,6 +2,7 @@ import Head from 'next/head';
 import SearchList from '../components/SearchList';
 import ListHeader from '../components/ListHeader';
 import ListMessage from '../components/ListMessage';
+import MainLayout from '../components/MainLayout';
 import SearchListItem from '../components/SearchListItem';
 import { useBookmarkContext } from '../context/BookmarkContext';
 
@@ -25,7 +26,7 @@ export default function Bookmarks() {
           content="Bookmarks page for the dictionary app"
         />
       </Head>
-      <main>
+      <MainLayout>
         <ListHeader disabled={bookmark.length <= 0} handleClick={clearBookmark}>
           Bookmarks
         </ListHeader>
@@ -49,25 +50,7 @@ export default function Bookmarks() {
             List empty. Bookmarked words will show up here.
           </ListMessage>
         )}
-      </main>
-      <style jsx>{`
-        main {
-          display: grid;
-          row-gap: 2.2rem;
-        }
-
-        /*
-          on bigger screens center content
-        */
-        @media (min-width: 640px) {
-          main {
-            display: flex;
-            flex-direction: column;
-            margin: 4rem auto 2rem;
-            width: 70%;
-          }
-        }
-      `}</style>
+      </MainLayout>
     </>
   );
 }

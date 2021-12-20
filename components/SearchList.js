@@ -6,6 +6,7 @@ export default function SearchList({ children }) {
         section {
           display: grid;
           row-gap: 1rem;
+          overflow-y: auto;
         }
       `}</style>
     </>

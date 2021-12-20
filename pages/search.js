@@ -2,6 +2,7 @@ import Head from 'next/head';
 import useFetch from '../hooks/useFetch';
 import SearchBar from '../components/SearchBar';
 import SearchList from '../components/SearchList';
+import MainLayout from '../components/MainLayout';
 import ListMessage from '../components/ListMessage';
 import { useQueryContext } from '../context/QueryContext';
 import SearchListItem from '../components/SearchListItem';
@@ -25,7 +26,7 @@ export default function search() {
         <title>Search</title>
         <meta name="description" content="Search page for the dictionary app" />
       </Head>
-      <main>
+      <MainLayout>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -59,25 +60,7 @@ export default function search() {
             })}
           </SearchList>
         )}
-        <style jsx>{`
-          main {
-            display: grid;
-            row-gap: 2.2rem;
-          }
-
-          /*
-            on bigger screens center content
-          */
-          @media (min-width: 640px) {
-            main {
-              display: flex;
-              flex-direction: column;
-              margin: 4rem auto 2rem;
-              width: 70%;
-            }
-          }
-        `}</style>
-      </main>
+      </MainLayout>
     </>
   );
 }

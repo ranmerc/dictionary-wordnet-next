@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import ListHeader from '../components/ListHeader';
 import SearchList from '../components/SearchList';
+import MainLayout from '../components/MainLayout';
 import ListMessage from '../components/ListMessage';
 import SearchListItem from '../components/SearchListItem';
 import { useRecentContext } from '../context/RecentContext';
@@ -20,7 +21,7 @@ export default function Recent() {
         <title>Recent</title>
         <meta name="description" content="Recent page for the dictionary app" />
       </Head>
-      <main>
+      <MainLayout>
         <ListHeader disabled={recent.length <= 0} handleClick={clearRecents}>
           Recent
         </ListHeader>
@@ -42,25 +43,7 @@ export default function Recent() {
         {recent.length <= 0 && (
           <ListMessage>List empty. Recent words will show up here.</ListMessage>
         )}
-      </main>
-      <style jsx>{`
-        main {
-          display: grid;
-          row-gap: 2.2rem;
-        }
-
-        /*
-          on bigger screens center content
-        */
-        @media (min-width: 640px) {
-          main {
-            display: flex;
-            flex-direction: column;
-            margin: 4rem auto 2rem;
-            width: 70%;
-          }
-        }
-      `}</style>
+      </MainLayout>
     </>
   );
 }

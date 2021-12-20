@@ -23,21 +23,21 @@ export default function SearchListItem({ lemma, pos, def, offset }) {
           text-decoration: none;
           font-family: 'Inter', sans-serif;
           padding: 1rem 0.8rem 1.25rem;
-          // if the word is long scroll horizontally
-          overflow-x: hidden;
         }
         div {
           display: flex;
           column-gap: 0.2rem;
           align-items: baseline;
           // if the word is long scroll horizontally
-          overflow-x: auto;
+          overflow-x: hidden;
         }
         h3 {
           font-weight: 700;
           font-size: 1.625rem;
           // senses with mutliple words was wrapping on space
           white-space: nowrap;
+          // if the word is long scroll horizontally
+          overflow-x: auto;
         }
         span {
           font-size: 0.8125rem;
