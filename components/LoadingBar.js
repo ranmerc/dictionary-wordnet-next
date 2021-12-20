@@ -51,9 +51,10 @@ export default function LoadingBar() {
           transform: scaleX(${progress});
           transform-origin: left;
           height: 10px;
-          background-color: ${theme.color[9]};
+          background-color: ${theme.color[8]};
           transition: transform 500ms;
           opacity: ${opacity};
+          z-index: 1;
         }
       `}</style>
     </>
