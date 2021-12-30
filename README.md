@@ -38,7 +38,9 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 
 - Internal API fetch with getServerSideProps? (Next.js) on [StackOverflow](https://stackoverflow.com/a/65760948).
 
-- [Perform debounce in React.js] on [StackOverflow](https://stackoverflow.com/a/58594348/10469084).
+- Perform debounce in React.js on [StackOverflow](https://stackoverflow.com/a/58594348/10469084).
+
+- Progressive Web App "does not work offline" error on [StackOverflow](https://stackoverflow.com/a/49989382/10469084).
 
 ## Notes
 
