@@ -1,5 +1,5 @@
 // Provides a basic skeleton to the app
-
+import Head from 'next/head';
 import { useThemeContext } from '../context/ThemeContext';
 
 export default function Layout({ children }) {
@@ -7,6 +7,9 @@ export default function Layout({ children }) {
 
   return (
     <>
+      <Head>
+        <meta name="theme-color" content={`${theme.color[8]}`} />
+      </Head>
       <div>{children}</div>
       <style jsx>{`
         div {
