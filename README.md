@@ -24,6 +24,8 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 
 - white-space on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space).
 
+- color-scheme on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme).
+
 - Wordnet [Documentation](https://wordnet.princeton.edu/documentation/).
 
 - [Debounce in JavaScript — Improve Your Application’s Performance](https://levelup.gitconnected.com/debounce-in-javascript-improve-your-applications-performance-5b01855e086).

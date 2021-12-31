@@ -38,6 +38,9 @@ export default function Layout({ children }) {
         body {
           background-color: ${theme.gray[0]};
         }
+        div {
+          color-scheme: ${theme.darkMode ? 'dark' : 'light'};
+        }
       `}</style>
     </>
   );
