@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <meta name="theme-color" content={`${theme.color[8]}`} />
+        <meta name="theme-color" content={`${theme.gray[0]}`} />
       </Head>
       <div>{children}</div>
       <style jsx>{`
