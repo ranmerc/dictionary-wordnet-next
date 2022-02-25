@@ -11,7 +11,6 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="manifest" href="/manifest.webmanifest" />
-          <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
         </Head>
         <body>
