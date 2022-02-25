@@ -1,5 +1,6 @@
 // Provides a basic skeleton to the app
 import Head from 'next/head';
+import dynamicSVGURL from '../utils/dynamicSVGURL';
 import { useThemeContext } from '../context/ThemeContext';
 
 export default function Layout({ children }) {
@@ -9,6 +10,7 @@ export default function Layout({ children }) {
     <>
       <Head>
         <meta name="theme-color" content={`${theme.gray[0]}`} />
+        <link rel="shortcut icon" href={dynamicSVGURL()} type="image/svg+xml" />
       </Head>
       <div>{children}</div>
       <style jsx>{`

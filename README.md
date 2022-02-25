@@ -26,6 +26,12 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 
 - color-scheme on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme).
 
+- Data URLs on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
+
+- encodeURIComponent() on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
+
+- SVG, Favicons, and All the Fun Things We Can Do With Them on [CSS-Tricks](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/).
+
 - Wordnet [Documentation](https://wordnet.princeton.edu/documentation/).
 
 - [Debounce in JavaScript — Improve Your Application’s Performance](https://levelup.gitconnected.com/debounce-in-javascript-improve-your-applications-performance-5b01855e086).
@@ -42,6 +48,8 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 
 - Perform debounce in React.js on [StackOverflow](https://stackoverflow.com/a/58594348/10469084).
 
+- Dynamic svg favicon? on [StackOverflow](https://stackoverflow.com/a/43371880/10469084).
+
 - Progressive Web App "does not work offline" error on [StackOverflow](https://stackoverflow.com/a/49989382/10469084).
 
 ## Notes
@@ -53,6 +61,8 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 - Its nice to have something like styled-jsx built in into NextJS but you can have only one style jsx block per component. So it really forces you to write components. Not to mention styled-js is buggy af sometimes breaks on even adding comments.
 
 - Don't need something like styled-components for dynamic styles. Could use [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) for the same effect with CSS Modules.
+
+- Solution for dynamic svg favicon was in front of me the whole time - Data URLs.
 
 ## Citation
 
