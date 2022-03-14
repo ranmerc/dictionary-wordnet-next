@@ -64,7 +64,7 @@ export default function Settings() {
             </a>{' '}
             but simple and modern. This is an open source project, check it out
             on{' '}
-            <a href="https://github.com/deadmercury/dictionary-wordnet-next">
+            <a href="https://github.com/ranmerc/dictionary-wordnet-next">
               Github
             </a>
             .

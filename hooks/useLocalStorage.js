@@ -1,6 +1,6 @@
 /*
   update the gist also
-  https://gist.github.com/deadmercury/9d607a5650f33658d7ef50b43b0f5094
+  https://gist.github.com/ranmerc/9d607a5650f33658d7ef50b43b0f5094
 */
 import { useReducer, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 

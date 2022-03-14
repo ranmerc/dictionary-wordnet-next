@@ -18,7 +18,7 @@ Alternate frontend for Wordnet. Built with NextJS and [node-wordnet](https://git
 
 - Design on [Figma](https://www.figma.com/file/f4CR7CD9W9lFFnwusS6slo/Dictionary?node-id=0%3A1).
 
-- Using a modified useLocalStroage with reducer from [How to use Context, useReducer and LocalStorage in Next JS](https://medium.com/geekculture/how-to-use-context-usereducer-and-localstorage-in-next-js-cc7bc925d3f2). Published as [gist](https://gist.github.com/deadmercury/9d607a5650f33658d7ef50b43b0f5094).
+- Using a modified useLocalStroage with reducer from [How to use Context, useReducer and LocalStorage in Next JS](https://medium.com/geekculture/how-to-use-context-usereducer-and-localstorage-in-next-js-cc7bc925d3f2). Published as [gist](https://gist.github.com/ranmerc/9d607a5650f33658d7ef50b43b0f5094).
 
 - [When to useLayoutEffect Instead of useEffect (example)](https://daveceddia.com/useeffect-vs-uselayouteffect/#:~:text=If%20your%20component%20is%20flickering%20when%20state%20is%20updated).
 
