@@ -55,8 +55,11 @@ export default function NavBarItem({ route, svg, href, check }) {
 
         li {
           display: grid;
-          padding: 0.5rem 0;
           position: relative;
+        }
+
+        a {
+          padding: 0.5rem 0;
         }
         /*
           divide nav into equal navitems
